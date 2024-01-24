@@ -11,13 +11,14 @@ interface IProductListProps {
 const ProductList: FC<IProductListProps> = () => {
     return (
         <div className=" flex flex-col md:flex-row gap-4">
-            {PRODUCTS.map(({ title, description, icon }) => (
-                <Card key={title} className=" flex-1 text-center">
-                    <CardHeader className=" flex flex-col items-center">
-                        <CardTitle>{title}</CardTitle>
-                        {icon}
+            {PRODUCTS.map(({ title, description, icon, color }) => (
+                <Card key={title} className=" flex-1 text-center bg-blue-900">
+                    <CardHeader className=" flex flex-col gap-4 items-center">
+                        <CardTitle className=" text-white ">{title}</CardTitle>
+                        <div className={color}>{icon}</div>
+                        
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className=" text-white">
                         {description}
                     </CardContent>
                 </Card>

@@ -1,3 +1,6 @@
+import { PRODUCTS } from "@/entities/products/static/products";
+import ProductChatForm from "@/entities/products/ui/ProductChatForm";
+import ProductHeader from "@/entities/products/ui/ProductHeader";
 import { FC } from "react";
 
 
@@ -7,8 +10,12 @@ interface ICabinetChatProps {
 }
 
 const CabinetChatPage: FC<ICabinetChatProps> = () => {
+    const [chat] = PRODUCTS;
     return (
-        <div>Chat Page</div>
+        <div className="md:flex-1 flex flex-col justify-between h-[calc(100vh-50px)] bg-green-50">
+            <ProductHeader {...chat}/>
+            <ProductChatForm/>
+        </div>
     )
 }
 
